@@ -29,8 +29,6 @@ jobs:
         run: |
           test -f $FILE # make sure the file actually exists
           go run github.com/onsi/ginkgo/v2/ginkgo build -cover -tags root .
-          sudo ./quic-go.test -ginkgo.v -ginkgo.trace -ginkgo.randomize-all -ginkgo.focus-file=$FILE -test.coverprofile coverage-root.txt
-          rm quic-go.test
       - name: Run tests (32 bit)
         if: ${{ matrix.os != 'macos' }} # can't run 32 bit tests on OSX.
         env:
