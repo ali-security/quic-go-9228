@@ -5,7 +5,7 @@ jobs:
       fail-fast: false
       matrix:
         go: [ "1.23.x", "1.24.x" ]
-    runs-on: ${{ fromJSON(vars['CROSS_COMPILE_RUNNER_UBUNTU'] || '"ubuntu-latest"') }}
+    runs-on: ${{ fromJSON(vars['CROSS_COMPILE_RUNNER_UBUNTU'] || '"ubuntu-24.04"') }}
     name: "Cross Compilation (Go ${{matrix.go}})"
     timeout-minutes: 30
     steps:
